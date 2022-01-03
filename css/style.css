@@ -1,0 +1,155 @@
+body {
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border-radius: 50%;
+}
+h3 {
+  font-size: 14px;
+}
+input {
+  width: 400px;
+  height: 25px;
+  padding-left: 5px;
+}
+.main-div {
+  width: 90%;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-widget {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1.3rem 0.5rem;
+  cursor: pointer;
+}
+.user-widget:hover {
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 0px 3px 8px rgb(0, 0, 0);
+}
+.user-widget a {
+  display: flex;
+  align-items: center;
+}
+
+.user-img {
+  width: 40%;
+  text-align: center;
+}
+.user-desc {
+  width: 60%;
+  padding-left: 1rem;
+}
+.user-desc h1 {
+  margin-bottom: 0;
+  color: black;
+}
+.user-desc p:first-of-type {
+  margin: 8px 0;
+  color: rgb(97, 97, 97);
+  font-size: 12px;
+}
+.user-desc p:last-of-type {
+  margin-top: 0;
+  color: rgb(145, 144, 144);
+}
+/* Modal */
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 5% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; /* Could be more or less, depending on screen size */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.userNav {
+  display: flex;
+  justify-content: space-between;
+}
+/* modal user description box */
+#user-desc-box {
+  text-align: center;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  /* display: flex; */
+  flex-direction: column;
+}
+.userDesc {
+  color: rgb(138, 138, 138);
+}
+/* modal image */
+#user-desc-box img {
+  width: 50%;
+  box-shadow: 2px 2px 6px black;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  margin-left: auto;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* tablet view */
+@media screen and (min-width: 768px) {
+  #employee-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .user-widget {
+    width: 45%;
+  }
+  h3 {
+    font-size: 19px;
+  }
+  /* modal */
+  .modal-content {
+    width: 40%;
+  }
+}
+
+/* desktop view */
+@media screen and (min-width: 1024px) {
+  .user-widget {
+    width: 30%;
+  }
+  /* modal */
+  .modal-content {
+    width: 25%;
+  }
+}

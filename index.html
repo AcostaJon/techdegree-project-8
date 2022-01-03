@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Employee Directory</title>
+    <!-- my css link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="main-div">
+      <div class="header">
+        <h3>AWESOME STARTUP EMPLOYEE DIRECTORY</h3>
+        <input type="text" id="search" placeholder="search..." onkeyup="search()" />
+      </div>
+      <div id="employee-div"></div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="userNav">
+          <img src="img/prev.png" id="prev" />
+          <img src="img/next.png" id="next" />
+        </div>
+        <div id="user-desc-box"></div>
+      </div>
+    </div>
+    <!-- my js script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
