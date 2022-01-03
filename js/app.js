@@ -1,6 +1,6 @@
 //ranom user api, nationalities:australia, canada, great britian, united states
 // Get the employee div container
-const randomUserUrl = "https://randomuser.me/api/?results=21&nat=au,ca,gb,us";
+const randomUserUrl = "https://randomuser.me/api/?results=12&nat=au,ca,gb,us";
 let employeeDiv = document.getElementById("employee-div");
 // Get the modal
 let modal = document.getElementById("myModal");
@@ -102,15 +102,14 @@ span.addEventListener("click", () => {
 // when user clicks on employee, show modal popup
 employeeDiv.addEventListener("click", (event) => {
   for (let i = 0; i < users.length; i++) {
+    const image = users[i].firstElementChild.firstElementChild.firstElementChild;
     if (
+      event.target === image ||
+      event.target === image.closest("div") ||
       event.target === users[i] ||
-      event.target === users[i].firstElementChild ||
-      event.target === users[i].firstElementChild.firstElementChild.firstElementChild ||
-      event.target === users[i].firstElementChild.lastElementChild ||
-      event.target === users[i].firstElementChild.lastElementChild.children[0] ||
-      event.target === users[i].firstElementChild.lastElementChild.children[1] ||
-      event.target === users[i].firstElementChild.lastElementChild.children[2]
+      event.target === users[i].firstElementChild.lastElementChild
     ) {
+      console.log(event.target);
       popUp(users[i]);
       currentUser = users[i];
     }
@@ -124,19 +123,21 @@ window.addEventListener("click", (event) => {
 });
 // when user clicks prev, show prev employee
 prev.addEventListener("click", (e) => {
+  next.style.pointerEvents = "auto";
   modalDescDiv.innerHTML = ``;
   modalDescDiv.innerHTML = `${currentUser.previousSibling.firstElementChild.getAttribute("data-title")}`;
   currentUser = currentUser.previousSibling;
   if (currentUser === currentUser.parentElement.firstElementChild) {
-    currentUser = employeeDiv.lastElementChild;
+    prev.style.pointerEvents = "none";
   }
 });
 // when user clicks next, show next employee
 next.addEventListener("click", () => {
+  prev.style.pointerEvents = "auto";
   modalDescDiv.innerHTML = ``;
   modalDescDiv.innerHTML = `${currentUser.nextSibling.firstElementChild.getAttribute("data-title")}`;
   currentUser = currentUser.nextSibling;
   if (currentUser === currentUser.parentElement.lastElementChild) {
-    currentUser = currentUser.parentElement.firstElementChild;
+    next.style.pointerEvents = "none";
   }
 });
