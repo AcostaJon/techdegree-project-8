@@ -17,6 +17,10 @@ let modalDescDiv = document.getElementById("user-desc-box");
 // get currentUser
 let currentUser;
 
+// after 2 seconds, alert user
+setTimeout(() => {
+  alert("Start Up Directory: search for an employees name in the search bar")
+}, 2000);
 /* ---------------------------
        Functions
 ------------------------------*/
@@ -25,7 +29,10 @@ function search() {
   const input = document.getElementById("search").value;
   const userNames = document.querySelectorAll("h1");
   userNames.forEach((element) => {
-    if (element.textContent.toLocaleLowerCase().includes(input)) {
+    if (
+      // returns true if the user input is caps or lowercase or first letter cap the rest lower case
+      element.textContent.includes(input) || element.textContent.toLocaleLowerCase().includes(input) || element.textContent.toLocaleUpperCase().includes(input) 
+    ) {
       element.parentElement.parentElement.parentElement.style.display = "block";
     } else {
       element.parentElement.parentElement.parentElement.style.display = "none";
